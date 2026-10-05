@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neguá · Convocatoria para terapeutas y espacios wellness</title>
+<meta name="description" content="Neguá abre en noviembre de 2026 en Laureles, Medellín. Buscamos terapeutas, facilitadores y espacios wellness para hacer parte del ecosistema. Déjenos sus datos.">
+<meta property="og:title" content="Neguá · Convocatoria para terapeutas y espacios wellness">
+<meta property="og:description" content="Ecosistema de bienestar con identidad colombiana. 19 suites, centro de eventos rooftop, espacios de movimiento y terapias. Apertura noviembre 2026.">
+<meta property="og:image" content="assets/hero-rooftop.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/logo-blanco.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;600&family=Jost:ital,wght@0,300;0,400;0,500;1,300&family=Chau+Philomene+One&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noche:#17130F; --umber:#5E4A3C; --bosque:#2E3628;
+    --terracota:#A75044; --terracota-2:#B8654A; --clay:#B8654A;
+    --sand:#DCC8AF; --cream:#E7DFD1; --linen:#C9B8A6; --taupe:#A48C72; --olive:#8C8F6E;
+    --glow:0 0 18px rgba(255,196,120,.55), 0 0 48px rgba(255,170,90,.28);
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--noche);color:var(--cream);font-family:'Jost',sans-serif;font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.display{font-family:'Comfortaa',sans-serif;font-weight:600;line-height:1.1;letter-spacing:-.01em}
+  .num{font-family:'Chau Philomene One',sans-serif;font-weight:400;letter-spacing:.01em}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{width:min(1180px,calc(100% - 48px));margin:0 auto}
+  .label{font-family:'Jost';font-weight:400;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
+
+  /* NAV */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px 0;transition:background .4s,padding .4s}
+  .nav.on{background:rgba(23,19,15,.86);backdrop-filter:blur(12px);padding:14px 0;border-bottom:1px solid rgba(220,200,175,.08)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between}
+  .nav .logo img{height:26px;filter:drop-shadow(0 0 10px rgba(255,196,120,.7)) drop-shadow(0 0 26px rgba(255,170,90,.35))}
+  .nav a.link{font-weight:400;font-size:14px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:5px;text-decoration-color:var(--taupe);color:var(--cream)}
+
+  /* BUTTON — un solo CTA en Terracota */
+  .btn{display:inline-block;background:var(--terracota);color:#fff;font-family:'Jost';font-weight:500;font-size:13px;letter-spacing:.2em;text-transform:uppercase;padding:18px 34px;border:0;border-radius:2px;text-decoration:none;cursor:pointer;transition:background .3s,transform .3s}
+  .btn:hover{background:var(--terracota-2);transform:translateY(-1px)}
+  .txtlink{font-weight:400;font-size:14px;letter-spacing:.06em;text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--taupe);color:var(--cream)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;transform:scale(1.06);animation:slow 14s var(--ease) forwards}
+  @keyframes slow{to{transform:scale(1)}}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(23,19,15,.35) 0%,rgba(23,19,15,.15) 35%,rgba(23,19,15,.78) 75%,var(--noche) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding:0 0 96px;display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end}
+  .hero .label{color:var(--sand);margin-bottom:22px;display:block}
+  .hero h1{font-size:clamp(40px,6.4vw,84px);color:#fff;margin-bottom:26px}
+  .hero p{font-size:clamp(18px,1.6vw,22px);color:var(--sand);max-width:560px;margin-bottom:38px}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:26px;margin-top:40px}
+  .hero .meta div{border-left:1px solid rgba(220,200,175,.35);padding-left:14px}
+  .hero .meta b{display:block;font-family:'Chau Philomene One';font-weight:400;font-size:30px;color:#fff;line-height:1}
+  .hero .meta span{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--sand)}
+  .hero .side{color:var(--sand);font-size:15px;max-width:360px;justify-self:end;padding-bottom:6px;border-top:1px solid rgba(220,200,175,.35);padding-top:16px}
+  .hero .side i{font-style:italic;display:block;font-size:17px;color:#fff;margin-bottom:8px}
+
+  /* REVEAL */
+  .rv{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+  .d1{transition-delay:.12s}.d2{transition-delay:.24s}.d3{transition-delay:.36s}
+
+  /* SECTIONS */
+  section{padding:110px 0}
+  .intro{background:var(--noche)}
+  .intro .wrap{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+  .intro h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin:16px 0 24px}
+  .intro p{color:var(--linen);margin-bottom:18px;max-width:520px}
+  .intro figure{position:relative;aspect-ratio:16/10;overflow:hidden}
+  .intro figure img{width:100%;height:100%;object-fit:cover}
+
+  /* ECOSISTEMA — cream band */
+  .eco{background:var(--cream);color:var(--umber)}
+  .eco .label{color:var(--terracota)}
+  .eco h2{font-size:clamp(30px,3.6vw,46px);margin:16px 0 56px;max-width:720px;color:var(--umber)}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid rgba(94,74,60,.25)}
+  .grid4 article{padding:34px 28px 38px 0;border-right:1px solid rgba(94,74,60,.18);padding-left:0}
+  .grid4 article+article{padding-left:28px}
+  .grid4 article:last-child{border-right:0}
+  .grid4 .num{font-size:40px;color:var(--terracota);line-height:1;margin-bottom:18px;display:block}
+  .grid4 h3{font-size:19px;margin-bottom:12px;color:var(--umber)}
+  .grid4 p{font-size:15px;color:#7a6756}
+
+  /* FULL BLEED PHOTO */
+  .bleed{padding:0;position:relative;height:min(78vh,720px);overflow:hidden}
+  .bleed img{width:100%;height:100%;object-fit:cover}
+  .bleed .cap{position:absolute;left:0;right:0;bottom:0;padding:48px 0;background:linear-gradient(0deg,rgba(23,19,15,.85),transparent)}
+  .bleed .cap p{font-family:'Comfortaa';font-weight:500;font-size:clamp(20px,2.4vw,30px);color:#fff;max-width:640px}
+
+  /* A QUIÉN */
+  .quien{background:var(--noche)}
+  .quien .head{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:60px}
+  .quien h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin-top:16px}
+  .quien .head p{color:var(--linen)}
+  .perfiles{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .perfil{background:var(--bosque);padding:38px 32px 40px;border-radius:2px;position:relative;overflow:hidden;transition:transform .5s var(--ease)}
+  .perfil:hover{transform:translateY(-4px)}
+  .perfil .num{font-size:14px;letter-spacing:.2em;color:var(--sand);display:block;margin-bottom:26px}
+  .perfil h3{font-size:22px;color:#fff;margin-bottom:14px}
+  .perfil p{font-size:15px;color:var(--linen);margin-bottom:22px}
+  .perfil ul{list-style:none}
+  .perfil li{font-size:14px;color:var(--sand);padding:9px 0;border-top:1px solid rgba(220,200,175,.14)}
+  .perfil li::before{content:"·";margin-right:10px;color:var(--terracota-2)}
+
+  /* QUÉ OFRECEMOS */
+  .ofrece{background:var(--umber);color:var(--cream)}
+  .ofrece .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px}
+  .ofrece h2{font-size:clamp(30px,3.6vw,46px);color:#fff;margin-top:16px}
+  .ofrece .label{color:var(--sand)}
+  .ofrece ol{list-style:none;counter-reset:o}
+  .ofrece li{counter-increment:o;display:grid;grid-template-columns:64px 1fr;gap:12px;padding:26px 0;border-top:1px solid rgba(231,223,209,.18)}
+  .ofrece li:last-child{border-bottom:1px solid rgba(231,223,209,.18)}
+  .ofrece li::before{content:counter(o,decimal-leading-zero);font-family:'Chau Philomene One';font-size:30px;color:var(--sand);line-height:1}
+  .ofrece li b{display:block;font-family:'Comfortaa';font-weight:600;font-size:18px;color:#fff;margin-bottom:6px}
+  .ofrece li span{font-size:15px;color:var(--cream);opacity:.85}
+
+  /* VOZ — cita */
+  .cita{background:var(--noche);text-align:center;padding:120px 0}
+  .cita blockquote{font-family:'Comfortaa';font-weight:500;font-size:clamp(24px,3.2vw,40px);color:#fff;max-width:860px;margin:0 auto 22px;line-height:1.3}
+  .cita cite{font-style:normal;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe)}
+
+  /* FORM */
+  .form{background:var(--cream);color:var(--umber)}
+  .form .wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:72px;align-items:start}
+  .form .label{color:var(--terracota)}
+  .form h2{font-size:clamp(30px,3.6vw,46px);color:var(--umber);margin:16px 0 22px}
+  .form .side p{color:#7a6756;margin-bottom:16px;max-width:420px}
+  .form .side .pasos{margin-top:34px;border-top:1px solid rgba(94,74,60,.25)}
+  .form .side .pasos div{display:grid;grid-template-columns:44px 1fr;gap:8px;padding:16px 0;border-bottom:1px solid rgba(94,74,60,.18);font-size:15px;color:#7a6756}
+  .form .side .pasos .num{font-size:24px;color:var(--terracota);line-height:1.2}
+  form{background:#fff;padding:44px;border-radius:2px;box-shadow:0 30px 60px -30px rgba(94,74,60,.35)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .f{margin-bottom:18px}
+  .f label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:400;color:var(--taupe);margin-bottom:8px}
+  .f input,.f select,.f textarea{width:100%;font-family:'Jost';font-weight:400;font-size:16px;color:var(--umber);background:var(--cream);border:1px solid transparent;border-bottom:1px solid var(--linen);padding:14px 14px;border-radius:2px;outline:0;transition:border-color .3s,background .3s;-webkit-appearance:none;appearance:none}
+  .f select{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' fill='none' stroke='%23A48C72' stroke-width='1.5'/></svg>");background-repeat:no-repeat;background-position:right 14px center}
+  .f input:focus,.f select:focus,.f textarea:focus{background:#fff;border-color:var(--terracota)}
+  .f textarea{min-height:110px;resize:vertical}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chips label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:400;letter-spacing:0;text-transform:none;color:var(--umber);background:var(--cream);padding:9px 14px;border-radius:999px;cursor:pointer;border:1px solid transparent;transition:all .25s;margin:0}
+  .chips input{width:auto;appearance:auto;-webkit-appearance:auto;accent-color:var(--terracota);margin:0;padding:0}
+  .chips label:has(input:checked){background:#fff;border-color:var(--terracota);color:var(--terracota)}
+  .consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:#7a6756;margin:8px 0 26px;line-height:1.5}
+  .consent input{margin-top:4px;accent-color:var(--terracota);flex-shrink:0}
+  .consent a{color:var(--terracota)}
+  form .btn{width:100%;text-align:center;padding:20px}
+  .hp{position:absolute;left:-9999px;opacity:0}
+  .fine{font-size:12px;color:var(--taupe);margin-top:14px;text-align:center}
+
+  /* FOOTER */
+  footer{background:var(--noche);padding:72px 0 36px}
+  footer .top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:28px;padding-bottom:40px;border-bottom:1px solid rgba(220,200,175,.12)}
+  footer .logo img{height:40px;filter:drop-shadow(0 0 12px rgba(255,196,120,.75)) drop-shadow(0 0 34px rgba(255,170,90,.4))}
+  footer .tag{font-family:'Comfortaa';font-weight:500;font-size:15px;color:var(--sand);margin-top:16px}
+  footer .cols{display:flex;gap:56px;font-size:14px;color:var(--linen)}
+  footer .cols b{display:block;font-weight:400;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--taupe);margin-bottom:8px}
+  footer .cols a{text-decoration:none;color:var(--linen)}
+  footer .cols a:hover{text-decoration:underline;text-underline-offset:4px}
+  footer .bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:24px;font-size:12px;color:var(--taupe);letter-spacing:.04em}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;padding-bottom:64px}
+    .hero .side{display:none}
+    .intro .wrap,.quien .head,.ofrece .wrap,.form .wrap{grid-template-columns:1fr;gap:40px}
+    .grid4{grid-template-columns:1fr 1fr}
+    .grid4 article{border-right:0;padding:28px 0;border-bottom:1px solid rgba(94,74,60,.18)}
+    .grid4 article+article{padding-left:0}
+    .grid4 article:nth-child(odd){padding-right:20px;border-right:1px solid rgba(94,74,60,.18)}
+    .grid4 article:nth-child(even){padding-left:20px}
+    .perfiles{grid-template-columns:1fr}
+    form{padding:28px 22px}
+    .row{grid-template-columns:1fr;gap:0}
+    section{padding:80px 0}
+    .bleed{height:60vh}
+    .nav a.link{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="logo" href="#"><img src="assets/logo-blanco.png" alt="Neguá"></a>
+    <a class="link" href="#formulario">Dejar mis datos</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="bg" src="assets/hero-rooftop.jpg" alt="Rooftop de Neguá en Laureles, Medellín">
+  <div class="wrap">
+    <div>
+      <span class="label rv">Convocatoria · Terapeutas y espacios wellness</span>
+      <h1 class="rv d1">Enciende tu propio fuego en Neguá.</h1>
+      <p class="rv d2">Abrimos en noviembre de 2026 en Laureles. Buscamos terapeutas, facilitadores y espacios de bienestar que quieran hacer parte del ecosistema desde el principio.</p>
+      <a class="btn rv d3" href="#formulario">Quiero hacer parte</a>
+      <div class="meta rv d3">
+        <div><b>19</b><span>Suites</span></div>
+        <div><b>1</b><span>Rooftop de eventos</span></div>
+        <div><b>2026</b><span>Apertura · noviembre</span></div>
+      </div>
+    </div>
+    <div class="side rv d3">
+      <i>«Cada persona brilla con luz propia entre todas las demás.»</i>
+      Eduardo Galeano, sobre el pueblo de Neguá, Chocó.
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <div>
+      <span class="label rv">Qué es Neguá</span>
+      <h2 class="rv d1">Un ecosistema de bienestar con identidad colombiana real, no decorativa.</h2>
+      <p class="rv d2">Neguá es un hotel boutique íntimo de 19 suites, cada una con nombre de una planta medicinal colombiana, con un centro de eventos rooftop, restaurante y espacios de movimiento y terapias. Operado por MELO.</p>
+      <p class="rv d2">Bienestar respaldado por ciencia, servido con el alma de Colombia. Lo que tiene evidencia se explica; lo que es tradición se nombra como tradición. Nunca se promete una cura.</p>
+      <p class="rv d3"><a class="txtlink" href="#ecosistema">Ver cómo está armado el ecosistema</a></p>
+    </div>
+    <figure class="rv d2"><img src="assets/movimiento.jpg" alt="Estudio de movimiento de Neguá"></figure>
+  </div>
+</section>
+
+<!-- ECOSISTEMA -->
+<section class="eco" id="ecosistema">
+  <div class="wrap">
+    <span class="label rv">Cómo lo hacemos</span>
+    <h2 class="rv d1">Cuatro piezas que por separado existen en el mercado. Juntas, en formato boutique íntimo, aún no.</h2>
+    <div class="grid4">
+      <article class="rv"><span class="num">01</span><h3>Gastronomía funcional</h3><p>Ingredientes colombianos validados científicamente: cacao ceremonial, borojó, moringa, cidrón, toronjil.</p></article>
+      <article class="rv d1"><span class="num">02</span><h3>Terapias y rituales</h3><p>Prácticas ancestrales: ceremonias de cacao, baños de hierbas, sahumerios de palo santo. Aquí entra usted.</p></article>
+      <article class="rv d2"><span class="num">03</span><h3>Inmersión cultural</h3><p>Finca de cacao, trapiche de panela, mercado local, arte y música en vivo.</p></article>
+      <article class="rv d3"><span class="num">04</span><h3>Cuidado del detalle</h3><p>Obsesión por el detalle, la comunicación y el servicio. Nada se deja al azar.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- FOTO -->
+<section class="bleed">
+  <img src="assets/lobby.jpg" alt="Lobby de Neguá">
+  <div class="cap"><div class="wrap"><p class="rv">Un lugar donde las personas encuentran un momento para estar consigo mismas.</p></div></div>
+</section>
+
+<!-- A QUIÉN BUSCAMOS -->
+<section class="quien">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="label rv">A quién buscamos</span><h2 class="rv d1">Personas y espacios con criterio, oficio y evidencia.</h2></div>
+      <p class="rv d2">No buscamos folclor de decoración ni promesas de transformación. Buscamos práctica real, bien hecha, con respaldo. Si trabaja así, queremos conocerle.</p>
+    </div>
+    <div class="perfiles">
+      <div class="perfil rv">
+        <span class="num">01</span>
+        <h3>Terapeutas independientes</h3>
+        <p>Profesionales del bienestar que quieran atender huéspedes y comunidad en nuestros espacios.</p>
+        <ul><li>Masaje y terapias corporales</li><li>Yoga, movimiento somático, pilates</li><li>Meditación, respiración, sonido</li><li>Fisioterapia y recuperación</li></ul>
+      </div>
+      <div class="perfil rv d1">
+        <span class="num">02</span>
+        <h3>Spas y centros wellness</h3>
+        <p>Operadores con experiencia que busquen una alianza o un segundo espacio dentro de un ecosistema boutique.</p>
+        <ul><li>Operación de spa o cabinas</li><li>Programas de bienestar para huéspedes</li><li>Retiros y experiencias de varios días</li><li>Productos naturales de autor</li></ul>
+      </div>
+      <div class="perfil rv d2">
+        <span class="num">03</span>
+        <h3>Facilitadores de rituales</h3>
+        <p>Guardianes de prácticas ancestrales colombianas, nombradas como lo que son: tradición.</p>
+        <ul><li>Ceremonias de cacao</li><li>Baños de hierbas y sahumerios</li><li>Temazcal y prácticas de fuego</li><li>Saberes de plantas medicinales</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUÉ OFRECEMOS -->
+<section class="ofrece">
+  <div class="wrap">
+    <div>
+      <span class="label rv">Qué encuentra en Neguá</span>
+      <h2 class="rv d1">Un espacio pensado para que su práctica se vea y se sienta como merece.</h2>
+    </div>
+    <ol>
+      <li class="rv"><div><b>Espacios diseñados para terapias y movimiento</b><span>Salas, cabinas y rooftop en un edificio nuevo en Laureles. Barro, terrazo, madera y latón.</span></div></li>
+      <li class="rv d1"><div><b>Un huésped que valora el oficio</b><span>Busca criterio, no ostentación. Admira el producto artesanal y rechaza el folclor decorativo. Paga por calidad real.</span></div></li>
+      <li class="rv d2"><div><b>Operación profesional</b><span>Agenda, comunicación y servicio resueltos por el equipo de Neguá, operado por MELO. Usted se concentra en su práctica.</span></div></li>
+      <li class="rv d3"><div><b>Una marca que lo nombra</b><span>Su nombre y su práctica aparecen en la carta de bienestar, en la web y en la experiencia del huésped. Sin diminutivos ni acento impostado.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- CITA -->
+<section class="cita">
+  <div class="wrap">
+    <blockquote class="rv">Hay fuegos que apenas alumbran y fuegos tan vivos que quien se acerca se enciende.</blockquote>
+    <cite class="rv d1">Eduardo Galeano · El libro de los abrazos</cite>
+  </div>
+</section>
+
+<!-- FORMULARIO -->
+<section class="form" id="formulario">
+  <div class="wrap">
+    <div class="side">
+      <span class="label rv">Déjenos sus datos</span>
+      <h2 class="rv d1">Cuéntenos qué hace y cómo lo hace.</h2>
+      <p class="rv d2">Dos minutos. Leemos cada formulario y respondemos personalmente. Primero la información, después el adorno.</p>
+      <div class="pasos rv d3">
+        <div><span class="num">01</span><span>Nos deja sus datos y su práctica.</span></div>
+        <div><span class="num">02</span><span>Revisamos su perfil y le escribimos.</span></div>
+        <div><span class="num">03</span><span>Conversamos y vemos cómo encaja en Neguá.</span></div>
+      </div>
+    </div>
+
+    <form name="terapeutas-negua" method="POST" action="/gracias.html" data-netlify="true" netlify-honeypot="sitio-web" class="rv d1">
+      <input type="hidden" name="form-name" value="terapeutas-negua">
+      <input type="hidden" name="origen" value="landing-terapeutas">
+      <p class="hp"><label>No llenar este campo: <input name="sitio-web"></label></p>
+
+      <div class="row">
+        <div class="f"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" required autocomplete="name"></div>
+        <div class="f"><label for="ciudad">Ciudad</label><input id="ciudad" name="ciudad" type="text" required placeholder="Medellín"></div>
+      </div>
+      <div class="row">
+        <div class="f"><label for="correo">Correo electrónico</label><input id="correo" name="correo" type="email" required autocomplete="email"></div>
+        <div class="f"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" required placeholder="+57 300 000 0000" autocomplete="tel"></div>
+      </div>
+      <div class="row">
+        <div class="f"><label for="perfil">Su perfil</label>
+          <select id="perfil" name="perfil" required>
+            <option value="" disabled selected>Seleccione</option>
+            <option>Terapeuta independiente</option>
+            <option>Spa o centro wellness</option>
+            <option>Facilitador(a) de rituales</option>
+            <option>Marca de productos naturales</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="f"><label for="experiencia">Años de experiencia</label>
+          <select id="experiencia" name="experiencia" required>
+            <option value="" disabled selected>Seleccione</option>
+            <option>Menos de 2</option><option>2 a 5</option><option>5 a 10</option><option>Más de 10</option>
+          </select>
+        </div>
+      </div>
+      <div class="f"><label>Disciplinas o servicios</label>
+        <div class="chips">
+          <label><input type="checkbox" name="disciplinas" value="Masaje y terapias corporales">Masaje y corporales</label>
+          <label><input type="checkbox" name="disciplinas" value="Yoga / movimiento">Yoga / movimiento</label>
+          <label><input type="checkbox" name="disciplinas" value="Meditación / respiración">Meditación / respiración</label>
+          <label><input type="checkbox" name="disciplinas" value="Sonido">Sonido</label>
+          <label><input type="checkbox" name="disciplinas" value="Ceremonias de cacao">Ceremonias de cacao</label>
+          <label><input type="checkbox" name="disciplinas" value="Baños de hierbas / sahumerios">Hierbas / sahumerios</label>
+          <label><input type="checkbox" name="disciplinas" value="Fisioterapia / recuperación">Fisioterapia</label>
+          <label><input type="checkbox" name="disciplinas" value="Nutrición funcional">Nutrición funcional</label>
+          <label><input type="checkbox" name="disciplinas" value="Estética / facial">Estética / facial</label>
+          <label><input type="checkbox" name="disciplinas" value="Retiros">Retiros</label>
+          <label><input type="checkbox" name="disciplinas" value="Otro">Otro</label>
+        </div>
+      </div>
+      <div class="f"><label for="redes">Instagram, sitio web o portafolio</label><input id="redes" name="redes" type="text" placeholder="@usuario o enlace"></div>
+      <div class="f"><label for="mensaje">Cuéntenos de su práctica</label><textarea id="mensaje" name="mensaje" placeholder="Qué hace, con qué respaldo, qué le gustaría ofrecer en Neguá."></textarea></div>
+
+      <label class="consent"><input type="checkbox" name="autorizacion" value="Sí" required>
+        <span>Autorizo el tratamiento de mis datos personales conforme a la <a href="politica-de-datos.html" target="_blank" rel="noopener">política de tratamiento de datos</a> (Ley 1581 de 2012), para ser contactado(a) sobre esta convocatoria.</span>
+      </label>
+
+      <button class="btn" type="submit">Enviar mis datos</button>
+      <p class="fine">Respondemos a su correo o WhatsApp. Sin listas masivas.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a class="logo" href="#"><img src="assets/logo-blanco.png" alt="Neguá"></a>
+        <p class="tag">Enciende tu propio fuego</p>
+      </div>
+      <div class="cols">
+        <div><b>Dónde</b>Laureles, Medellín<br>Colombia</div>
+        <div><b>Apertura</b>Noviembre 2026</div>
+        <div><b>Legal</b><a href="politica-de-datos.html">Política de datos</a></div>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 Neguá · Operado por MELO</span>
+      <span>Ecosistema de bienestar con identidad colombiana</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>40),{passive:true});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
